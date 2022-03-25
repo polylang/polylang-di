@@ -1,0 +1,8 @@
+includes:
+	- phar://phpstan.phar/conf/bleedingEdge.neon
+	- vendor/wpsyntex/polylang-phpstan/extension.neon
+parameters:
+	level: max
+	paths:
+		- %currentWorkingDirectory%/src
+	treatPhpDocTypesAsCertain: false
