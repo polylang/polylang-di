@@ -122,7 +122,7 @@ $container->add(
         return new Foo( $int, $prefix . ' - ' . $string );
     }
 )
-    ->newArguments(
+    ->withArguments(
         [
             32,
             'another string',
