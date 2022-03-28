@@ -9,6 +9,8 @@ Dependency Injection Container by WP Syntex (Polylang).
 This package is compliant with [PSR-4](https://www.php-fig.org/psr/psr-4/) and [PSR-11](https://www.php-fig.org/psr/psr-11/).  
 However, PSR-11's interfaces are not implemented, to prevent conflicts with other plugins and themes that may use a different version of them.
 
+This project is pretty much a fork of an old version of [league/container](https://github.com/thephpleague/container), that has been reworked a bit to keep only the features that we need in our projects.
+
 ## Install
 
 Via Composer
@@ -150,5 +152,3 @@ var_dump( $bar1->foo instanceof Foo ); // True.
 var_dump( $bar1->foo === $bar2->foo ); // True.
 var_dump( $bar1->string ); // 'foo'.
 ```
-
-Inspired by [league/container](https://github.com/thephpleague/container).
