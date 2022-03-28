@@ -112,6 +112,27 @@ $foo4 = $container->get( 'foo' );
 
 var_dump( $foo4->int ); // 22.
 var_dump( $foo4->string ); // 'some string'.
+
+// With an anonymous function.
+$container->add( 'prefix', 'String prefix' );
+$container->add(
+    'foo',
+    function ( $container, $int, $string ) {
+        $prefix = $container->get( 'prefix' );
+        return new Foo( $int, $prefix . ' - ' . $string );
+    }
+)
+    ->newArguments(
+        [
+            32,
+            'another string',
+        ]
+    );
+
+$foo5 = $container->get( 'foo' );
+
+var_dump( $foo5->int ); // 32.
+var_dump( $foo5->string ); // 'String prefix - another string'.
 ```
 
 ### Reference other items (or not)
