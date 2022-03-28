@@ -6,7 +6,8 @@
 
 Dependency Injection Container by WP Syntex (Polylang).
 
-This package is compliant with [PSR-4](https://www.php-fig.org/psr/psr-4/) and [PSR-11](https://www.php-fig.org/psr/psr-11/).
+This package is compliant with [PSR-4](https://www.php-fig.org/psr/psr-4/) and [PSR-11](https://www.php-fig.org/psr/psr-11/).  
+However, PSR-11's interfaces are not implemented, to prevent conflicts with other plugins and themes that may use a different version of them.
 
 ## Install
 

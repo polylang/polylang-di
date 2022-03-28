@@ -160,7 +160,7 @@ class Container implements ContainerInterface {
 	/**
 	 * Returns a definition of an item to be extended.
 	 *
-	 * @since 1.0
+	 * @since  1.0
 	 * @throws NotFoundException No entry was found for this identifier.
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
