@@ -162,6 +162,7 @@ class Container implements ContainerInterface {
 	 *
 	 * @since  1.0
 	 * @throws NotFoundException No entry was found for this identifier.
+	 * @throws NotFoundException The entry is already builded.
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
 	 * @param  string $id          Alias used to store the item.
@@ -183,6 +184,12 @@ class Container implements ContainerInterface {
 
 		if ( array_key_exists( $id, $this->singleDefinitions ) ) {
 			return new Definition( $this->singleDefinitions[ $id ] );
+		}
+
+		if ( array_key_exists( $id, $this->sharedBuilded ) ) {
+			throw new NotFoundException(
+				sprintf( "Unable to extend alias '%s' as it is already builded and cannot be extended anymore.", $id )
+			);
 		}
 
 		throw new NotFoundException(
