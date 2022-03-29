@@ -71,8 +71,8 @@ class Definition implements DefinitionInterface {
 	 * @param  array<mixed> $args List of arguments.
 	 * @return self
 	 */
-	public function newArguments( array $args ) {
-		$this->definition->newArguments( $args );
+	public function withNewArguments( array $args ) {
+		$this->definition->withNewArguments( $args );
 
 		return $this;
 	}

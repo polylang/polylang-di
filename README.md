@@ -101,7 +101,7 @@ var_dump( $foo3->string ); // 'a string'.
 
 // Retrieve the definition and replace previous arguments.
 $container->extend( 'foo' )
-    ->newArguments(
+    ->withNewArguments(
         [
             22,
             'some string',

@@ -90,7 +90,7 @@ abstract class AbstractDefinitionType implements DefinitionTypeInterface {
 	 * @param  array<mixed> $args List of arguments.
 	 * @return self
 	 */
-	public function newArguments( array $args ) {
+	public function withNewArguments( array $args ) {
 		$this->arguments = $args;
 
 		return $this;
