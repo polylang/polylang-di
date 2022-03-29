@@ -8,6 +8,8 @@
 
 	<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
 	<file>.</file>
+	<exclude-pattern>tests/fixtures.php</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
 
 	<!-- Our own ruleset. -->
 	<rule ref="Polylang"/>
@@ -15,4 +17,8 @@
 	<!-- Run against the PSR-4 ruleset. -->
 	<!-- https://github.com/suin/phpcs-psr4-sniff -->
 	<arg name="basepath" value="."/>
+
+	<rule ref="Suin.Classes.PSR4.IncorrectClassName" >
+		<exclude-pattern>/tests</exclude-pattern>
+	</rule>
 </ruleset>

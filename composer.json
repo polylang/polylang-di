@@ -12,6 +12,7 @@
 		}
 	},
 	"require-dev": {
+		"phpunit/phpunit": "^9.5.19",
 		"wpsyntex/polylang-phpstan": "dev-master",
 		"wpsyntex/polylang-cs": "dev-main"
 	},
@@ -20,17 +21,27 @@
 			"WP_Syntex\\Polylang_DI\\": "src/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"WP_Syntex\\Polylang_DI\\Tests\\": "tests"
+		},
+		"files": [
+			"tests/fixtures.php"
+		]
+	},
 	"scripts": {
 		"cs": "vendor/bin/phpcs",
 		"stan": "vendor/bin/phpstan analyze --memory-limit=1G",
 		"lint": [
 			"@cs",
 			"@stan"
-		]
+		],
+		"test": "vendor/bin/phpunit --colors=always"
 	},
 	"scripts-descriptions": {
 		"cs": "Runs PHPCS linter.",
 		"stan": "Runs PHPStan analysis.",
-		"lint": "Runs both PHPCS and PHPStan."
+		"lint": "Runs both PHPCS and PHPStan.",
+		"test": "Runs PHPUnit tests."
 	}
 }
