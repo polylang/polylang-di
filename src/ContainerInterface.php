@@ -49,11 +49,11 @@ interface ContainerInterface {
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
 	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed|null $concrete     The item to store. If omitted, `$id` is used.
+	 * @param  mixed      $concrete     The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
-	public function addShared( $id, $concrete = null );
+	public function addShared( $id, $concrete );
 
 	/**
 	 * Adds an item to the container.
@@ -62,11 +62,11 @@ interface ContainerInterface {
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
 	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed|null $concrete     The item to store. If omitted, `$id` is used.
+	 * @param  mixed      $concrete     The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
-	public function add( $id, $concrete = null );
+	public function add( $id, $concrete );
 
 	/**
 	 * Returns a definition of an item to be extended.

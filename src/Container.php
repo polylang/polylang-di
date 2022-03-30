@@ -116,11 +116,11 @@ class Container implements ContainerInterface {
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
 	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed|null $concrete     The item to store. If omitted, `$id` is used.
+	 * @param  mixed      $concrete     The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
-	public function addShared( $id, $concrete = null ) {
+	public function addShared( $id, $concrete ) {
 		if ( ! is_string( $id ) ) {
 			throw new InvalidArgumentException(
 				sprintf(
@@ -140,11 +140,11 @@ class Container implements ContainerInterface {
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
 	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed|null $concrete     The item to store. If omitted, `$id` is used.
+	 * @param  mixed      $concrete     The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
-	public function add( $id, $concrete = null ) {
+	public function add( $id, $concrete ) {
 		if ( ! is_string( $id ) ) {
 			throw new InvalidArgumentException(
 				sprintf(
@@ -203,17 +203,13 @@ class Container implements ContainerInterface {
 	 * @since 1.0
 	 *
 	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed|null $concrete     The item to store.
+	 * @param  mixed      $concrete     The item to store.
 	 * @param  bool       $share        True to share the item. False otherwise.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the "definitions".
 	 *                                  Null otherwise.
 	 */
 	protected function store( $id, $concrete, $share ) {
 		unset( $this->singleDefinitions[ $id ], $this->sharedBuilded[ $id ], $this->sharedDefinitions[ $id ] );
-
-		if ( empty( $concrete ) ) {
-			$concrete = $id;
-		}
 
 		$definition = $this->getDefinition( $id, $concrete );
 
@@ -239,7 +235,7 @@ class Container implements ContainerInterface {
 	 * @since 1.0
 	 *
 	 * @param  string     $id                Alias used to store the item.
-	 * @param  mixed|null $concrete          The item to store. If omitted, `$id` is used.
+	 * @param  mixed      $concrete          The item to store.
 	 * @return DefinitionTypeInterface|mixed A `DefinitionTypeInterface` object when matching one of the "definitions".
 	 *                                       `$concrete` otherwise.
 	 */
