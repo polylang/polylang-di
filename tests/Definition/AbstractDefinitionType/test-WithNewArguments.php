@@ -13,6 +13,7 @@ use ReflectionProperty;
 use WP_Syntex\Polylang_DI\Definition\AbstractDefinitionType;
 use WP_Syntex\Polylang_DI\Tests\Fixtures\DummyDefinition;
 use WP_Syntex\Polylang_DI\Tests\Fixtures\WithTwoParams;
+use Yoast\PHPUnitPolyfills\Polyfills\AssertIsType;
 
 /**
  * Tests for `AbstractDefinitionType->withNewArguments()`.
@@ -20,6 +21,8 @@ use WP_Syntex\Polylang_DI\Tests\Fixtures\WithTwoParams;
  * @group container
  */
 class WithNewArguments_Test extends TestCase {
+	use AssertIsType;
+
 	/**
 	 * Test should replace arguments.
 	 *
