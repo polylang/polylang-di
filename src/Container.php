@@ -115,8 +115,8 @@ class Container implements ContainerInterface {
 	 * @since  1.0
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
-	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed      $concrete     The item to store.
+	 * @param  string $id               Alias used to store the item.
+	 * @param  mixed  $concrete         The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
@@ -139,8 +139,8 @@ class Container implements ContainerInterface {
 	 * @since  1.0
 	 * @throws InvalidArgumentException The identifier is not a string.
 	 *
-	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed      $concrete     The item to store.
+	 * @param  string $id               Alias used to store the item.
+	 * @param  mixed  $concrete         The item to store.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the definitions.
 	 *                                  Null otherwise.
 	 */
@@ -202,9 +202,9 @@ class Container implements ContainerInterface {
 	 *
 	 * @since 1.0
 	 *
-	 * @param  string     $id           Alias used to store the item.
-	 * @param  mixed      $concrete     The item to store.
-	 * @param  bool       $share        True to share the item. False otherwise.
+	 * @param  string $id               Alias used to store the item.
+	 * @param  mixed  $concrete         The item to store.
+	 * @param  bool   $share            True to share the item. False otherwise.
 	 * @return DefinitionInterface|null A `DefinitionInterface` object when matching one of the "definitions".
 	 *                                  Null otherwise.
 	 */
@@ -234,8 +234,8 @@ class Container implements ContainerInterface {
 	 *
 	 * @since 1.0
 	 *
-	 * @param  string     $id                Alias used to store the item.
-	 * @param  mixed      $concrete          The item to store.
+	 * @param  string $id                    Alias used to store the item.
+	 * @param  mixed  $concrete              The item to store.
 	 * @return DefinitionTypeInterface|mixed A `DefinitionTypeInterface` object when matching one of the "definitions".
 	 *                                       `$concrete` otherwise.
 	 */
