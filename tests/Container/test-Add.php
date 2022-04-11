@@ -31,7 +31,7 @@ class Add_Test extends TestCase {
 
 		$this->expectException( InvalidArgumentException::class );
 
-		$container->add( 42 );
+		$container->add( 42, 42 );
 	}
 
 	/**

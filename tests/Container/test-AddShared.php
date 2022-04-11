@@ -32,7 +32,7 @@ class AddShared_Test extends TestCase {
 
 		$this->expectException( InvalidArgumentException::class );
 
-		$container->addShared( 42 );
+		$container->addShared( 42, 42 );
 	}
 
 	/**
